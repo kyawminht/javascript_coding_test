@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript coding test</title>
+</head>
+<body>
+    
+    <script>
+        function reverseString(str){
+            let result='';
+      
+            for (let i= str.length -1 ;i >=0; i --){
+                result +=str[i];
+            }
+            return result;
+        }
+
+        function logestWord(str){
+            let longest="";
+            const words=str.split(" ")
+            for (let word of words){
+                if (word.length > longest.length ){
+                    longest=word;
+                }
+            }
+            return longest;
+        }
+
+       
+        function palindrome(str){
+            let reverseWord='';
+
+            for (let i= str.length - 1 ; i >=0; i--){
+                reverseWord += str[i];
+            }
+            console.log("reverse",reverseWord)
+           if (str === reverseWord){
+            return true;
+           }else{
+            return false;
+           }
+        }
+
+        function uniqueArray(arr){
+            let unique=[];
+            
+            for (let i=0; i<arr.length; i ++){
+                if (unique.indexOf(arr[i]) === -1){
+                    unique.push(arr[i])
+                }
+            }
+            return unique;
+        }
+
+        function checkAnagram(str1,str2){
+            const sortStr1=str1.split("").sort().join("");
+            console.log(sortStr1)
+            const sortStr2=str2.split("").sort().join("");
+            console.log(sortStr2)
+
+            return sortStr1 === sortStr2;
+        }
+
+
+        function countVowels(str){
+            const vowels=['a','e','i','o','u'];
+            let count=0;
+
+            for (let i of str.toLowerCase()){
+                if (vowels.includes(i)){
+                    count ++;
+                }
+            }
+            return count;
+        }
+
+
+        function findLargest(arr){
+            let largest=[0];
+
+            for ( let num of arr){
+                if ( num > largest){
+                    largest=num;
+                }
+            }
+
+            return largest;
+
+        }
+
+        function checkPrimeNumber(num){
+            for (let i=2; i <= num/2; i++){
+                if (num % i === 0) return false;
+            }
+
+            return true;
+        }
+
+
+        function findFactorial(num){
+            let total=1;
+
+            for (let i =1; i <=num;  i ++){
+                console.log("i",i)
+                total *=i;
+            }
+            return total;
+        }
+
+        function removeWhiteSpace(str){
+           let result='';
+           for (let i=0; i<str.length; i++){
+                if (str[i] !== ' '){
+                    result += str[i];
+                }
+           }
+           return result;
+        }
+        console.log(removeWhiteSpace("Hello     world"));
+    </script>
+</body>
+</html>
